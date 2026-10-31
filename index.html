@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>A Magical Birthday Surprise ✨</title>
+  
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient Nature Canvas Layers -->
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+  <canvas id="petalCanvas" aria-hidden="true"></canvas>
+
+  <!-- Sun Rays & Dreamy Lighting Overlay -->
+  <div class="sun-rays" aria-hidden="true"></div>
+  <div class="vignette-overlay" aria-hidden="true"></div>
+
+  <!-- Decorative Botanical Elements (Corner Foliage & Florals) -->
+  <div class="botanical-container" aria-hidden="true">
+    <!-- Top-Left Foliage -->
+    <svg class="botanical-corner botanical-tl" viewBox="0 0 240 240" fill="none">
+      <g class="sway-slow">
+        <path d="M-20 -20 C40 60 70 120 40 190 C60 140 100 80 120 -10" stroke="#3b6e4f" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.6"/>
+        <path d="M-10 10 Q60 50 85 130 Q120 70 160 30" stroke="#2c533c" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.5"/>
+        <!-- Leaves -->
+        <path d="M30 40 C45 25 70 30 75 50 C60 65 35 60 30 40 Z" fill="#4d8560" opacity="0.75"/>
+        <path d="M55 85 C75 75 95 90 90 110 C70 115 55 100 55 85 Z" fill="#3e7351" opacity="0.8"/>
+        <path d="M40 140 C55 130 80 145 75 165 C60 170 45 155 40 140 Z" fill="#2d5e3f" opacity="0.7"/>
+        <path d="M90 40 C110 30 135 45 130 65 C110 70 95 55 90 40 Z" fill="#589b6f" opacity="0.7"/>
+        <!-- Soft Flowers -->
+        <circle cx="85" cy="125" r="7" fill="#ffbccc" opacity="0.85"/>
+        <circle cx="92" cy="123" r="5" fill="#ffd5df" opacity="0.9"/>
+        <circle cx="85" cy="125" r="3" fill="#ffe385"/>
+        <circle cx="130" cy="55" r="8" fill="#ffa8be" opacity="0.85"/>
+        <circle cx="137" cy="52" r="6" fill="#ffccd8" opacity="0.9"/>
+        <circle cx="130" cy="55" r="3.5" fill="#ffe385"/>
+      </g>
+    </svg>
+
+    <!-- Top-Right Foliage -->
+    <svg class="botanical-corner botanical-tr" viewBox="0 0 240 240" fill="none">
+      <g class="sway-med">
+        <path d="M260 -20 C200 60 170 120 200 190 C180 140 140 80 120 -10" stroke="#3b6e4f" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.6"/>
+        <path d="M210 40 C195 25 170 30 165 50 C180 65 205 60 210 40 Z" fill="#4d8560" opacity="0.75"/>
+        <path d="M185 85 C165 75 145 90 150 110 C170 115 185 100 185 85 Z" fill="#3e7351" opacity="0.8"/>
+        <path d="M200 140 C185 130 160 145 165 165 C180 170 195 155 200 140 Z" fill="#2d5e3f" opacity="0.7"/>
+        <circle cx="155" cy="125" r="7" fill="#ffbccc" opacity="0.85"/>
+        <circle cx="155" cy="125" r="3" fill="#ffe385"/>
+      </g>
+    </svg>
+
+    <!-- Bottom-Left Foliage & Garden Blooms -->
+    <svg class="botanical-corner botanical-bl" viewBox="0 0 260 260" fill="none">
+      <g class="sway-slow">
+        <!-- Fern fronds -->
+        <path d="M-20 280 C60 220 90 160 70 80 C95 135 130 195 150 280" stroke="#254a33" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+        <path d="M20 220 C35 205 65 210 65 230 C50 245 25 240 20 220 Z" fill="#3e7351" opacity="0.85"/>
+        <path d="M45 170 C60 155 90 160 90 180 C75 195 50 190 45 170 Z" fill="#4d8560" opacity="0.85"/>
+        <path d="M70 120 C85 105 115 110 110 130 C95 145 75 138 70 120 Z" fill="#5ba373" opacity="0.8"/>
+        <!-- Soft Garden Peony/Rose -->
+        <ellipse cx="110" cy="210" rx="14" ry="12" fill="#ffaec0" opacity="0.9"/>
+        <ellipse cx="118" cy="205" rx="11" ry="10" fill="#ffc2d1" opacity="0.9"/>
+        <ellipse cx="106" cy="216" rx="11" ry="9" fill="#ff94ac" opacity="0.9"/>
+        <circle cx="112" cy="210" r="5" fill="#ffe794"/>
+      </g>
+    </svg>
+
+    <!-- Bottom-Right Foliage & Garden Blooms -->
+    <svg class="botanical-corner botanical-br" viewBox="0 0 260 260" fill="none">
+      <g class="sway-med">
+        <path d="M280 280 C200 220 170 160 190 80 C165 135 130 195 110 280" stroke="#254a33" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+        <path d="M240 220 C225 205 195 210 195 230 C210 245 235 240 240 220 Z" fill="#3e7351" opacity="0.85"/>
+        <path d="M215 170 C200 155 170 160 170 180 C185 195 210 190 215 170 Z" fill="#4d8560" opacity="0.85"/>
+        <path d="M190 120 C175 105 145 110 150 130 C165 145 185 138 190 120 Z" fill="#5ba373" opacity="0.8"/>
+        <!-- Rose Blossom -->
+        <ellipse cx="150" cy="210" rx="14" ry="12" fill="#ffaec0" opacity="0.9"/>
+        <ellipse cx="142" cy="205" rx="11" ry="10" fill="#ffc2d1" opacity="0.9"/>
+        <circle cx="148" cy="210" r="5" fill="#ffe794"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Ambient Audio Controls (Muted by default as required) -->
+  <header class="app-header">
+    <button id="audioToggleBtn" class="audio-btn" type="button" aria-label="Toggle ambient music" title="Toggle Sound">
+      <svg class="audio-icon audio-icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <line x1="23" y1="9" x2="17" y2="15"></line>
+        <line x1="17" y1="9" x2="23" y2="15"></line>
+      </svg>
+      <svg class="audio-icon audio-icon-playing" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+      </svg>
+      <span class="audio-tooltip">Sound</span>
+    </button>
+  </header>
+
+  <!-- Main Viewport Container -->
+  <main class="viewport-stage" id="stage">
+
+    <!-- ============================================== -->
+    <!-- SCREEN 1: The Invitation                       -->
+    <!-- ============================================== -->
+    <section class="screen active" id="screen1" aria-label="Screen 1: The Invitation">
+      <div class="screen-content invitation-card">
+        <div class="invitation-ornament top-ornament" aria-hidden="true">
+          <span class="ornament-line"></span>
+          <span class="ornament-gem">✦</span>
+          <span class="ornament-line"></span>
+        </div>
+
+        <p class="invitation-eyebrow">A Special Surprise For You</p>
+
+        <!-- Center Glowing Button -->
+        <div class="invitation-btn-wrapper">
+          <div class="btn-glow-aura" aria-hidden="true"></div>
+          <button id="inviteBtn" class="invite-btn" type="button">
+            <span class="btn-shimmer" aria-hidden="true"></span>
+            <span class="btn-text">Click Me</span>
+            <span class="btn-sparkle s1" aria-hidden="true">✨</span>
+            <span class="btn-sparkle s2" aria-hidden="true">✨</span>
+          </button>
+        </div>
+
+        <p class="invitation-hint">Touch gently to begin the journey</p>
+
+        <div class="invitation-ornament bottom-ornament" aria-hidden="true">
+          <span class="ornament-line"></span>
+          <span class="ornament-gem">✦</span>
+          <span class="ornament-line"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- SCREEN 2: The Special Date                     -->
+    <!-- ============================================== -->
+    <section class="screen hidden" id="screen2" aria-label="Screen 2: The Special Date">
+      <div class="screen-content date-card">
+        <!-- Floating Sparkles around Date -->
+        <div class="date-sparkle-field" aria-hidden="true">
+          <span class="date-star ds-1">✦</span>
+          <span class="date-star ds-2">✧</span>
+          <span class="date-star ds-3">✦</span>
+          <span class="date-star ds-4">✧</span>
+          <span class="date-star ds-5">✨</span>
+          <span class="date-star ds-6">✨</span>
+        </div>
+
+        <div class="date-wreath-halo" aria-hidden="true"></div>
+
+        <p class="date-subheading">A Moment Etched In Time</p>
+
+        <!-- The Date Display -->
+        <div class="date-display-container" id="dateClickable" role="button" tabindex="0" aria-label="Special Date: 01-11-26. Tap to continue.">
+          <div class="date-glow-halo" aria-hidden="true"></div>
+          <div class="date-number" id="dateText" aria-live="polite">
+            <span class="date-char" data-char="0">0</span><span class="date-char" data-char="1">1</span><span class="date-char dash" data-char="-">-</span><span class="date-char" data-char="1">1</span><span class="date-char" data-char="1">1</span><span class="date-char dash" data-char="-">-</span><span class="date-char" data-char="2">2</span><span class="date-char" data-char="6">6</span>
+          </div>
+        </div>
+
+        <!-- Subtle Prompt Message (Appears after at least 2 seconds) -->
+        <div class="date-instruction" id="datePrompt" aria-hidden="true">
+          <span class="prompt-icon">✧</span>
+          <span class="prompt-text">Tap the date to continue...</span>
+          <span class="prompt-icon">✧</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- SCREEN 3: Birthday Surprise (Main Screen)      -->
+    <!-- ============================================== -->
+    <section class="screen hidden" id="screen3" aria-label="Screen 3: Birthday Surprise">
+      <div class="screen-content birthday-card">
+        
+        <!-- Overhead Celebration Garland -->
+        <div class="celebration-garland" aria-hidden="true">
+          <span class="garland-star">✨</span>
+          <span class="garland-star">🌸</span>
+          <span class="garland-star">💖</span>
+          <span class="garland-star">🌸</span>
+          <span class="garland-star">✨</span>
+        </div>
+
+        <!-- Handwritten Calligraphy Stage -->
+        <div class="calligraphy-container" id="calligraphyWrapper">
+          <div class="calligraphy-stage" id="calligraphyStage">
+            <!-- Line 1: Happy Birthday -->
+            <div class="writing-line">
+              <div class="writing-track" id="trackLine1">
+                <h1 class="line1-text">Happy Birthday</h1>
+              </div>
+            </div>
+
+            <!-- Line 2: AIKANSH (Prominent Capital Letters) -->
+            <div class="writing-line">
+              <div class="writing-track" id="trackLine2">
+                <h2 class="line2-text">AIKANSH</h2>
+              </div>
+            </div>
+
+            <!-- Delicate Underline Flourish -->
+            <svg class="flourish-svg" id="flourishSvg" viewBox="0 0 280 28" fill="none">
+              <path class="flourish-path" id="flourishPath" d="M 25 14 C 95 26 185 26 255 14" stroke="url(#flourishGrad)" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="25" cy="14" r="3.5" fill="#fff" filter="drop-shadow(0 0 5px #ffd56b)"/>
+              <circle cx="255" cy="14" r="3.5" fill="#fff" filter="drop-shadow(0 0 5px #ffd56b)"/>
+              <defs>
+                <linearGradient id="flourishGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#fff9e6"/>
+                  <stop offset="35%" stop-color="#ffd56b"/>
+                  <stop offset="70%" stop-color="#ffb3c6"/>
+                  <stop offset="100%" stop-color="#ffd56b"/>
+                </linearGradient>
+              </defs>
+            </svg>
+
+            <!-- Floating Golden Pen Nib -->
+            <div class="pen-nib" id="penNib" aria-hidden="true">
+              <div class="pen-nib-aura"></div>
+              <div class="pen-nib-star">✦</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Birthday Message & Wishes Blessing -->
+        <div class="birthday-blessing" id="birthdayBlessing">
+          <p class="blessing-quote">"May your year be as extraordinary, bright, and beautiful as your soul."</p>
+          <div class="blessing-hearts" aria-hidden="true">
+            <span>🌸</span>
+            <span>✨</span>
+            <span>💖</span>
+            <span>✨</span>
+            <span>🌸</span>
+          </div>
+        </div>
+
+        <!-- Replay Surprise Button -->
+        <div class="replay-container" id="replayBox">
+          <button id="replayBtn" class="replay-btn" type="button" aria-label="Replay the birthday surprise">
+            <span class="replay-icon">↺</span>
+            <span class="replay-text">Replay Surprise</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Interactive Sparkles Container for Finger Taps -->
+  <div id="touchFxLayer" class="touch-fx-layer" aria-hidden="true"></div>
+
+  <!-- Main JavaScript Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
